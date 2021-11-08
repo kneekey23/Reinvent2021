@@ -8,17 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		95A0D59C2739B6620093B947 /* ReinventMemeFeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D59B2739B6620093B947 /* ReinventMemeFeedApp.swift */; };
-		95A0D59E2739B6620093B947 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D59D2739B6620093B947 /* ContentView.swift */; };
+		95A0D59E2739B6620093B947 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D59D2739B6620093B947 /* FeedView.swift */; };
 		95A0D5A02739B6630093B947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A0D59F2739B6630093B947 /* Assets.xcassets */; };
 		95A0D5A32739B6630093B947 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A0D5A22739B6630093B947 /* Preview Assets.xcassets */; };
+		95A0D5AB2739B7680093B947 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D5AA2739B7680093B947 /* Meme.swift */; };
+		95A0D5AE2739B79A0093B947 /* MemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D5AD2739B79A0093B947 /* MemeService.swift */; };
+		95A0D5B02739BE7E0093B947 /* MemeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D5AF2739BE7E0093B947 /* MemeResponse.swift */; };
+		95A0D5B32739BF2E0093B947 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D5B22739BF2E0093B947 /* DateFormatter+Extension.swift */; };
+		95A0D5B72739C0460093B947 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D5B62739C0460093B947 /* FeedViewModel.swift */; };
+		95A0D5B92739C0820093B947 /* MemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D5B82739C0820093B947 /* MemeViewModel.swift */; };
+		95A0D5BC2739C1E90093B947 /* MemeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D5BB2739C1E90093B947 /* MemeRow.swift */; };
+		95A0D5BE2739C2830093B947 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D5BD2739C2830093B947 /* LabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		95A0D5982739B6620093B947 /* ReinventMemeFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReinventMemeFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A0D59B2739B6620093B947 /* ReinventMemeFeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinventMemeFeedApp.swift; sourceTree = "<group>"; };
-		95A0D59D2739B6620093B947 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		95A0D59D2739B6620093B947 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		95A0D59F2739B6630093B947 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95A0D5A22739B6630093B947 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95A0D5AA2739B7680093B947 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		95A0D5AD2739B79A0093B947 /* MemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeService.swift; sourceTree = "<group>"; };
+		95A0D5AF2739BE7E0093B947 /* MemeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeResponse.swift; sourceTree = "<group>"; };
+		95A0D5B22739BF2E0093B947 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		95A0D5B62739C0460093B947 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		95A0D5B82739C0820093B947 /* MemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewModel.swift; sourceTree = "<group>"; };
+		95A0D5BB2739C1E90093B947 /* MemeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeRow.swift; sourceTree = "<group>"; };
+		95A0D5BD2739C2830093B947 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		95A0D5BF2739C3F40093B947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +68,13 @@
 		95A0D59A2739B6620093B947 /* ReinventMemeFeed */ = {
 			isa = PBXGroup;
 			children = (
+				95A0D5BF2739C3F40093B947 /* Info.plist */,
+				95A0D5B52739C03A0093B947 /* ViewModels */,
+				95A0D5B42739C0130093B947 /* Views */,
+				95A0D5B12739BF210093B947 /* Extensions */,
+				95A0D5AC2739B7840093B947 /* Services */,
+				95A0D5A92739B7600093B947 /* Models */,
 				95A0D59B2739B6620093B947 /* ReinventMemeFeedApp.swift */,
-				95A0D59D2739B6620093B947 /* ContentView.swift */,
 				95A0D59F2739B6630093B947 /* Assets.xcassets */,
 				95A0D5A12739B6630093B947 /* Preview Content */,
 			);
@@ -65,6 +87,58 @@
 				95A0D5A22739B6630093B947 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		95A0D5A92739B7600093B947 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95A0D5AA2739B7680093B947 /* Meme.swift */,
+				95A0D5AF2739BE7E0093B947 /* MemeResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95A0D5AC2739B7840093B947 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				95A0D5AD2739B79A0093B947 /* MemeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		95A0D5B12739BF210093B947 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95A0D5B22739BF2E0093B947 /* DateFormatter+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95A0D5B42739C0130093B947 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95A0D5BA2739C1DF0093B947 /* Rows */,
+				95A0D59D2739B6620093B947 /* FeedView.swift */,
+				95A0D5BD2739C2830093B947 /* LabelView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		95A0D5B52739C03A0093B947 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				95A0D5B62739C0460093B947 /* FeedViewModel.swift */,
+				95A0D5B82739C0820093B947 /* MemeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95A0D5BA2739C1DF0093B947 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				95A0D5BB2739C1E90093B947 /* MemeRow.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +211,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95A0D59E2739B6620093B947 /* ContentView.swift in Sources */,
+				95A0D5B72739C0460093B947 /* FeedViewModel.swift in Sources */,
+				95A0D5AB2739B7680093B947 /* Meme.swift in Sources */,
+				95A0D5BC2739C1E90093B947 /* MemeRow.swift in Sources */,
+				95A0D5B02739BE7E0093B947 /* MemeResponse.swift in Sources */,
+				95A0D5B32739BF2E0093B947 /* DateFormatter+Extension.swift in Sources */,
+				95A0D5AE2739B79A0093B947 /* MemeService.swift in Sources */,
+				95A0D59E2739B6620093B947 /* FeedView.swift in Sources */,
+				95A0D5B92739C0820093B947 /* MemeViewModel.swift in Sources */,
 				95A0D59C2739B6620093B947 /* ReinventMemeFeedApp.swift in Sources */,
+				95A0D5BE2739C2830093B947 /* LabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,12 +354,15 @@
 				DEVELOPMENT_TEAM = W3DRXD72QU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReinventMemeFeed/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = ReinventMemeFeed;
+				INFOPLIST_KEY_CFBundleName = ReinventMemeFeed;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +387,15 @@
 				DEVELOPMENT_TEAM = W3DRXD72QU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReinventMemeFeed/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = ReinventMemeFeed;
+				INFOPLIST_KEY_CFBundleName = ReinventMemeFeed;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

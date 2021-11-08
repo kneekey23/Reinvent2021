@@ -11,7 +11,7 @@ import SwiftUI
 struct ReinventMemeFeedApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FeedView(viewModel: FeedViewModel())
         }
     }
 }
