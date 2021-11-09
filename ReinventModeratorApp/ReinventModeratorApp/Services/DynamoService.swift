@@ -27,6 +27,8 @@ final class DynamoService {
             print(meme)
         }
         
-        return []
+        return try items.map { meme in
+           try Meme(dictionary: meme)
+        }
     }
 }
