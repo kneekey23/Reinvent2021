@@ -15,6 +15,12 @@ struct FeedView: View {
                 ForEach(viewModel.memeViewModels, id: \.id) { memeVm in
                     MemeRow(viewModel: memeVm)
                 }
+                if viewModel.hasMoreMemes == true {
+                    ProgressView()
+                    .onAppear {
+                        viewModel.loadMemes()
+                    }
+                }
             }.navigationBarTitleDisplayMode(.inline)
             .toolbar() {
                 ToolbarItem(placement: .principal, content: {

@@ -20,7 +20,7 @@ final class MemeService {
     private var getMemesCancellable: AnyCancellable?
     init () {}
     
-    func getMemes() -> AnyPublisher<[Meme], ServiceError> {
+    func getMemes(continueFrom: Date? = nil) -> AnyPublisher<MemeResponse, ServiceError> {
         let url = API_URL + "/memes/list"
         
         var dataTask: URLSessionDataTask?
@@ -28,8 +28,14 @@ final class MemeService {
         let onSubscription: (Subscription) -> Void = { _ in dataTask?.resume() }
         let onCancel: () -> Void = { dataTask?.cancel() }
         
-        return Future<[Meme], ServiceError> { [self] promise in
-            guard let url = URL(string: url) else {
+        return Future<MemeResponse, ServiceError> { [self] promise in
+            var url = URL(string: url)
+
+            if let continueFromDateString = continueFrom?.iso8601FractionalSeconds() {
+                let queryItems = [URLQueryItem(name: "continueFrom", value: continueFromDateString)]
+                url = url?.appending(queryItems)
+            }
+            guard let url = url else {
                 promise(.failure(ServiceError.urlRequest))
                 return
             }
@@ -51,7 +57,7 @@ final class MemeService {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601DateFormatterWithFractionalSeconds)
                     let memeResponse = try decoder.decode(MemeResponse.self, from: data)
-                    promise(.success(memeResponse.memes))
+                    promise(.success(memeResponse))
                 } catch {
                     promise(.failure(ServiceError.decode))
                 }

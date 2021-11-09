@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95765835273B17BF00393CAE /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765834273B17BF00393CAE /* URL+Extensions.swift */; };
 		95A0D59C2739B6620093B947 /* ReinventMemeFeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D59B2739B6620093B947 /* ReinventMemeFeedApp.swift */; };
 		95A0D59E2739B6620093B947 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0D59D2739B6620093B947 /* FeedView.swift */; };
 		95A0D5A02739B6630093B947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A0D59F2739B6630093B947 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95765834273B17BF00393CAE /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		95A0D5982739B6620093B947 /* ReinventMemeFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReinventMemeFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A0D59B2739B6620093B947 /* ReinventMemeFeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinventMemeFeedApp.swift; sourceTree = "<group>"; };
 		95A0D59D2739B6620093B947 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				95A0D5B22739BF2E0093B947 /* DateFormatter+Extension.swift */,
+				95765834273B17BF00393CAE /* URL+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95765835273B17BF00393CAE /* URL+Extensions.swift in Sources */,
 				95A0D5B72739C0460093B947 /* FeedViewModel.swift in Sources */,
 				95A0D5AB2739B7680093B947 /* Meme.swift in Sources */,
 				95A0D5BC2739C1E90093B947 /* MemeRow.swift in Sources */,

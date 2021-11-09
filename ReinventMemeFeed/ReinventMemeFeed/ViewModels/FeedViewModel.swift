@@ -10,6 +10,8 @@ import SwiftUI
 
 final class FeedViewModel: ObservableObject {
     @Published private(set) var memeViewModels: [MemeViewModel] = []
+    @Published private(set) var hasMoreMemes: Bool = false
+    var continueFrom: Date? = nil
     
     let memeService: MemeService
     var getMemesCancellable: AnyCancellable?
@@ -19,17 +21,20 @@ final class FeedViewModel: ObservableObject {
     }
     
     func loadMemes() {
-        getMemesCancellable = memeService.getMemes().sink { result in
+        getMemesCancellable = memeService.getMemes(continueFrom: continueFrom).sink { result in
             switch result {
             case .finished:
                 print("call to get memes finished")
             case .failure(let err):
                 print(err)
             }
-        } receiveValue: { memes in
-            for meme in memes {
+        } receiveValue: { memeResponse in
+            
+            for meme in memeResponse.memes {
                 self.memeViewModels.append(MemeViewModel(meme: meme))
             }
+            self.hasMoreMemes = memeResponse.continueFrom != nil
+            self.continueFrom = memeResponse.continueFrom
         }
     }
 }
