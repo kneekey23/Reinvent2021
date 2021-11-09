@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		95765843273B191100393CAE /* ReinventModeratorAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765842273B191100393CAE /* ReinventModeratorAppApp.swift */; };
+		95765847273B191200393CAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95765846273B191200393CAE /* Assets.xcassets */; };
+		9576584A273B191200393CAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95765849273B191200393CAE /* Preview Assets.xcassets */; };
+		95765852273B19E000393CAE /* AWSDynamoDB in Frameworks */ = {isa = PBXBuildFile; productRef = 95765851273B19E000393CAE /* AWSDynamoDB */; };
+		95765856273B1CAB00393CAE /* ModeratorFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765855273B1CAA00393CAE /* ModeratorFeedView.swift */; };
+		95765858273B1CD900393CAE /* ModeratorFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765857273B1CD900393CAE /* ModeratorFeedViewModel.swift */; };
+		9576585B273B1CEA00393CAE /* DynamoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576585A273B1CEA00393CAE /* DynamoService.swift */; };
+		9576585E273B1D2600393CAE /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576585D273B1D2600393CAE /* Meme.swift */; };
+		95765860273B226C00393CAE /* MemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576585F273B226C00393CAE /* MemeViewModel.swift */; };
+		95765863273B22B600393CAE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765862273B22B600393CAE /* Date+Extensions.swift */; };
+		95765865273B23A300393CAE /* MemeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765864273B23A300393CAE /* MemeRow.swift */; };
+		95765867273B23D300393CAE /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765866273B23D300393CAE /* LabelView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9576583F273B191100393CAE /* ReinventModeratorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReinventModeratorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95765842273B191100393CAE /* ReinventModeratorAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinventModeratorAppApp.swift; sourceTree = "<group>"; };
+		95765846273B191200393CAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95765849273B191200393CAE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95765855273B1CAA00393CAE /* ModeratorFeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeratorFeedView.swift; path = ReinventModeratorApp/ModeratorFeedView.swift; sourceTree = SOURCE_ROOT; };
+		95765857273B1CD900393CAE /* ModeratorFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorFeedViewModel.swift; sourceTree = "<group>"; };
+		9576585A273B1CEA00393CAE /* DynamoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamoService.swift; sourceTree = "<group>"; };
+		9576585D273B1D2600393CAE /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		9576585F273B226C00393CAE /* MemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewModel.swift; sourceTree = "<group>"; };
+		95765862273B22B600393CAE /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		95765864273B23A300393CAE /* MemeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeRow.swift; sourceTree = "<group>"; };
+		95765866273B23D300393CAE /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9576583C273B191100393CAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95765852273B19E000393CAE /* AWSDynamoDB in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		95765836273B191100393CAE = {
+			isa = PBXGroup;
+			children = (
+				95765841273B191100393CAE /* ReinventModeratorApp */,
+				95765840273B191100393CAE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95765840273B191100393CAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9576583F273B191100393CAE /* ReinventModeratorApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95765841273B191100393CAE /* ReinventModeratorApp */ = {
+			isa = PBXGroup;
+			children = (
+				95765861273B22AD00393CAE /* Extensions */,
+				9576585C273B1D1300393CAE /* Models */,
+				95765859273B1CDE00393CAE /* Services */,
+				95765854273B1A5D00393CAE /* ViewModels */,
+				95765853273B19F300393CAE /* Views */,
+				95765842273B191100393CAE /* ReinventModeratorAppApp.swift */,
+				95765846273B191200393CAE /* Assets.xcassets */,
+				95765848273B191200393CAE /* Preview Content */,
+			);
+			path = ReinventModeratorApp;
+			sourceTree = "<group>";
+		};
+		95765848273B191200393CAE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				95765849273B191200393CAE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		95765853273B19F300393CAE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95765855273B1CAA00393CAE /* ModeratorFeedView.swift */,
+				95765864273B23A300393CAE /* MemeRow.swift */,
+				95765866273B23D300393CAE /* LabelView.swift */,
+			);
+			name = Views;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		95765854273B1A5D00393CAE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				95765857273B1CD900393CAE /* ModeratorFeedViewModel.swift */,
+				9576585F273B226C00393CAE /* MemeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95765859273B1CDE00393CAE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9576585A273B1CEA00393CAE /* DynamoService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9576585C273B1D1300393CAE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9576585D273B1D2600393CAE /* Meme.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95765861273B22AD00393CAE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95765862273B22B600393CAE /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9576583E273B191100393CAE /* ReinventModeratorApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9576584D273B191200393CAE /* Build configuration list for PBXNativeTarget "ReinventModeratorApp" */;
+			buildPhases = (
+				9576583B273B191100393CAE /* Sources */,
+				9576583C273B191100393CAE /* Frameworks */,
+				9576583D273B191100393CAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReinventModeratorApp;
+			packageProductDependencies = (
+				95765851273B19E000393CAE /* AWSDynamoDB */,
+			);
+			productName = ReinventModeratorApp;
+			productReference = 9576583F273B191100393CAE /* ReinventModeratorApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95765837273B191100393CAE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					9576583E273B191100393CAE = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 9576583A273B191100393CAE /* Build configuration list for PBXProject "ReinventModeratorApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95765836273B191100393CAE;
+			packageReferences = (
+				95765850273B19E000393CAE /* XCRemoteSwiftPackageReference "aws-sdk-swift" */,
+			);
+			productRefGroup = 95765840273B191100393CAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9576583E273B191100393CAE /* ReinventModeratorApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9576583D273B191100393CAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9576584A273B191200393CAE /* Preview Assets.xcassets in Resources */,
+				95765847273B191200393CAE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9576583B273B191100393CAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95765858273B1CD900393CAE /* ModeratorFeedViewModel.swift in Sources */,
+				95765843273B191100393CAE /* ReinventModeratorAppApp.swift in Sources */,
+				95765867273B23D300393CAE /* LabelView.swift in Sources */,
+				95765863273B22B600393CAE /* Date+Extensions.swift in Sources */,
+				95765856273B1CAB00393CAE /* ModeratorFeedView.swift in Sources */,
+				95765865273B23A300393CAE /* MemeRow.swift in Sources */,
+				9576585B273B1CEA00393CAE /* DynamoService.swift in Sources */,
+				95765860273B226C00393CAE /* MemeViewModel.swift in Sources */,
+				9576585E273B1D2600393CAE /* Meme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9576584B273B191200393CAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9576584C273B191200393CAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9576584E273B191200393CAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ReinventModeratorApp/Preview Content\"";
+				DEVELOPMENT_TEAM = W3DRXD72QU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aws.ReinventModeratorApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9576584F273B191200393CAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ReinventModeratorApp/Preview Content\"";
+				DEVELOPMENT_TEAM = W3DRXD72QU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aws.ReinventModeratorApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9576583A273B191100393CAE /* Build configuration list for PBXProject "ReinventModeratorApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9576584B273B191200393CAE /* Debug */,
+				9576584C273B191200393CAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9576584D273B191200393CAE /* Build configuration list for PBXNativeTarget "ReinventModeratorApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9576584E273B191200393CAE /* Debug */,
+				9576584F273B191200393CAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95765850273B19E000393CAE /* XCRemoteSwiftPackageReference "aws-sdk-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/awslabs/aws-sdk-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95765851273B19E000393CAE /* AWSDynamoDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95765850273B19E000393CAE /* XCRemoteSwiftPackageReference "aws-sdk-swift" */;
+			productName = AWSDynamoDB;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 95765837273B191100393CAE /* Project object */;
+}
