@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		956E7C61273C627700C4E46D /* AWSS3 in Frameworks */ = {isa = PBXBuildFile; productRef = 956E7C60273C627700C4E46D /* AWSS3 */; };
 		95765843273B191100393CAE /* ReinventModeratorAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765842273B191100393CAE /* ReinventModeratorAppApp.swift */; };
 		95765847273B191200393CAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95765846273B191200393CAE /* Assets.xcassets */; };
 		9576584A273B191200393CAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95765849273B191200393CAE /* Preview Assets.xcassets */; };
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956E7C61273C627700C4E46D /* AWSS3 in Frameworks */,
 				95765852273B19E000393CAE /* AWSDynamoDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,11 +50,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		956E7C5F273C627700C4E46D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		95765836273B191100393CAE = {
 			isa = PBXGroup;
 			children = (
 				95765841273B191100393CAE /* ReinventModeratorApp */,
 				95765840273B191100393CAE /* Products */,
+				956E7C5F273C627700C4E46D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +159,7 @@
 			name = ReinventModeratorApp;
 			packageProductDependencies = (
 				95765851273B19E000393CAE /* AWSDynamoDB */,
+				956E7C60273C627700C4E46D /* AWSS3 */,
 			);
 			productName = ReinventModeratorApp;
 			productReference = 9576583F273B191100393CAE /* ReinventModeratorApp.app */;
@@ -433,6 +444,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		956E7C60273C627700C4E46D /* AWSS3 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95765850273B19E000393CAE /* XCRemoteSwiftPackageReference "aws-sdk-swift" */;
+			productName = AWSS3;
+		};
 		95765851273B19E000393CAE /* AWSDynamoDB */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 95765850273B19E000393CAE /* XCRemoteSwiftPackageReference "aws-sdk-swift" */;

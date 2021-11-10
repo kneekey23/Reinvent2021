@@ -17,6 +17,7 @@ struct Meme: Codable {
     let id: String
     let approvalTimestamp: Date?
     let s3Uri: String
+    var url: URL?
     let status: MemeStatus
     let submitTimestamp: Date
     
@@ -38,6 +39,7 @@ struct Meme: Codable {
         self.s3Uri = s3Uri
         self.status = status
         self.submitTimestamp = submitTimestamp
+        self.url = URL(string: "")
     }
     
     
@@ -62,6 +64,7 @@ struct Meme: Codable {
         self.approvalTimestamp = DateFormatter.iso8601DateFormatterWithFractionalSeconds.date(from: approvalTimestamp)
         self.s3Uri = s3Uri
         self.submitTimestamp = submitTimestamp
+        self.url = URL(string: "")
     }
 }
 

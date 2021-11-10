@@ -13,8 +13,10 @@ final class ModeratorFeedViewModel: ObservableObject {
     
     let dynamoService: DynamoService
     
-    init(dynamoService: DynamoService = DynamoService()) {
-        self.dynamoService = dynamoService
+    init() {
+        
+        self.dynamoService = try! DynamoService()
+
     }
     
     func loadMemesToModerate() async throws {
