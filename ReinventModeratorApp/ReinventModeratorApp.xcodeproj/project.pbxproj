@@ -12,14 +12,14 @@
 		95765847273B191200393CAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95765846273B191200393CAE /* Assets.xcassets */; };
 		9576584A273B191200393CAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95765849273B191200393CAE /* Preview Assets.xcassets */; };
 		95765852273B19E000393CAE /* AWSDynamoDB in Frameworks */ = {isa = PBXBuildFile; productRef = 95765851273B19E000393CAE /* AWSDynamoDB */; };
-		95765856273B1CAB00393CAE /* ModeratorFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765855273B1CAA00393CAE /* ModeratorFeedView.swift */; };
 		95765858273B1CD900393CAE /* ModeratorFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765857273B1CD900393CAE /* ModeratorFeedViewModel.swift */; };
 		9576585B273B1CEA00393CAE /* DynamoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576585A273B1CEA00393CAE /* DynamoService.swift */; };
 		9576585E273B1D2600393CAE /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576585D273B1D2600393CAE /* Meme.swift */; };
 		95765860273B226C00393CAE /* MemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576585F273B226C00393CAE /* MemeViewModel.swift */; };
 		95765863273B22B600393CAE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765862273B22B600393CAE /* Date+Extensions.swift */; };
-		95765865273B23A300393CAE /* MemeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765864273B23A300393CAE /* MemeRow.swift */; };
-		95765867273B23D300393CAE /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765866273B23D300393CAE /* LabelView.swift */; };
+		95F32F2A274F34B300E81651 /* ModeratorFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F32F27274F34B300E81651 /* ModeratorFeedView.swift */; };
+		95F32F2B274F34B300E81651 /* Rows in Resources */ = {isa = PBXBuildFile; fileRef = 95F32F28274F34B300E81651 /* Rows */; };
+		95F32F2C274F34B300E81651 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F32F29274F34B300E81651 /* LabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,16 +27,16 @@
 		95765842273B191100393CAE /* ReinventModeratorAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinventModeratorAppApp.swift; sourceTree = "<group>"; };
 		95765846273B191200393CAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95765849273B191200393CAE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		95765855273B1CAA00393CAE /* ModeratorFeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeratorFeedView.swift; path = ReinventModeratorApp/ModeratorFeedView.swift; sourceTree = SOURCE_ROOT; };
 		95765857273B1CD900393CAE /* ModeratorFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorFeedViewModel.swift; sourceTree = "<group>"; };
 		9576585A273B1CEA00393CAE /* DynamoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamoService.swift; sourceTree = "<group>"; };
 		9576585D273B1D2600393CAE /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		9576585F273B226C00393CAE /* MemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewModel.swift; sourceTree = "<group>"; };
 		95765862273B22B600393CAE /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		95765864273B23A300393CAE /* MemeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeRow.swift; sourceTree = "<group>"; };
-		95765866273B23D300393CAE /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		95F32F24274F1B3700E81651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95F32F25274F2FDC00E81651 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		95F32F27274F34B300E81651 /* ModeratorFeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeratorFeedView.swift; path = ReinventModeratorApp/Views/ModeratorFeedView.swift; sourceTree = SOURCE_ROOT; };
+		95F32F28274F34B300E81651 /* Rows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Rows; path = ReinventModeratorApp/Views/Rows; sourceTree = SOURCE_ROOT; };
+		95F32F29274F34B300E81651 /* LabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelView.swift; path = ReinventModeratorApp/Views/LabelView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +104,9 @@
 		95765853273B19F300393CAE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				95F32F26274F33AC00E81651 /* Rows */,
-				95765855273B1CAA00393CAE /* ModeratorFeedView.swift */,
-				95765866273B23D300393CAE /* LabelView.swift */,
+				95F32F28274F34B300E81651 /* Rows */,
+				95F32F29274F34B300E81651 /* LabelView.swift */,
+				95F32F27274F34B300E81651 /* ModeratorFeedView.swift */,
 			);
 			name = Views;
 			path = "New Group";
@@ -143,14 +143,6 @@
 				95765862273B22B600393CAE /* Date+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		95F32F26274F33AC00E81651 /* Rows */ = {
-			isa = PBXGroup;
-			children = (
-				95765864273B23A300393CAE /* MemeRow.swift */,
-			);
-			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +212,7 @@
 			files = (
 				9576584A273B191200393CAE /* Preview Assets.xcassets in Resources */,
 				95765847273B191200393CAE /* Assets.xcassets in Resources */,
+				95F32F2B274F34B300E81651 /* Rows in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,10 +225,9 @@
 			files = (
 				95765858273B1CD900393CAE /* ModeratorFeedViewModel.swift in Sources */,
 				95765843273B191100393CAE /* ReinventModeratorAppApp.swift in Sources */,
-				95765867273B23D300393CAE /* LabelView.swift in Sources */,
 				95765863273B22B600393CAE /* Date+Extensions.swift in Sources */,
-				95765856273B1CAB00393CAE /* ModeratorFeedView.swift in Sources */,
-				95765865273B23A300393CAE /* MemeRow.swift in Sources */,
+				95F32F2A274F34B300E81651 /* ModeratorFeedView.swift in Sources */,
+				95F32F2C274F34B300E81651 /* LabelView.swift in Sources */,
 				9576585B273B1CEA00393CAE /* DynamoService.swift in Sources */,
 				95765860273B226C00393CAE /* MemeViewModel.swift in Sources */,
 				9576585E273B1D2600393CAE /* Meme.swift in Sources */,
