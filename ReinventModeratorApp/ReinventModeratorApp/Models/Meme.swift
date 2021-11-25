@@ -43,7 +43,7 @@ struct Meme: Codable {
     }
     
     
-    public init(dictionary: [String: DynamoDbClientTypes.AttributeValue]) throws {
+    public init(dictionary: [String: DynamoDbClientTypes.AttributeValue], url: URL?) throws {
         guard let id = dictionary[DynamoDBField.id],
             let status = dictionary[DynamoDBField.status],
             let approvalTimestamp = dictionary[DynamoDBField.approvalTimestamp],
@@ -64,7 +64,7 @@ struct Meme: Codable {
         self.approvalTimestamp = DateFormatter.iso8601DateFormatterWithFractionalSeconds.date(from: approvalTimestamp)
         self.s3Uri = s3Uri
         self.submitTimestamp = submitTimestamp
-        self.url = URL(string: "")
+        self.url = url
     }
 }
 

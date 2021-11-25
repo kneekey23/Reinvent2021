@@ -9,48 +9,90 @@ import Foundation
 import AWSDynamoDB
 import AWSS3
 import AWSClientRuntime
+import ClientRuntime
 
 final class DynamoService {
     let credProvider: AWSCredentialsProvider
+    let s3Config: S3Client.S3ClientConfiguration
+    let dynamoClient: DynamoDbClient
+    let tableName = "memes"
     
     init() throws {
-        let credentials = AWSCredentials(accessKey: "AKIA3XEC53A2LM6SWXOV", secret: "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", expirationTimeout: 60)
+        let accessKey = try Configuration.value(for: "AWS_ACCESS_KEY")
+        let secret = try Configuration.value(for: "AWS_SECRET_KEY")
+        let credentials = AWSCredentials(accessKey: accessKey,
+                                         secret: secret,
+                                         expirationTimeout: 60)
         self.credProvider = try AWSCredentialsProvider.fromStatic(credentials)
+        self.s3Config = try S3Client.S3ClientConfiguration(credentialsProvider: credProvider,
+                                                         region: "us-east-1")
+        let config = try DynamoDbClient.DynamoDbClientConfiguration(credentialsProvider: credProvider,
+                                                                    region: "us-east-1")
+        self.dynamoClient = DynamoDbClient(config: config)
     }
     
     func getImagesToModerate() async throws -> [Meme]  {
-        let tableName = "memes"
-        let config = try DynamoDbClient.DynamoDbClientConfiguration(credentialsProvider: credProvider, region: "us-east-1")
-        let client = DynamoDbClient(config: config)
         let scanInput = ScanInput(tableName: tableName)
-        let result = try await client.scan(input: scanInput)
+        let result = try await dynamoClient.scan(input: scanInput)
         guard let items = result.items else {
             return []
         }
         
-        for meme in items {
-            print(meme)
+        let memes = try items.map { meme -> Meme in
+            guard let s3Uri = meme["s3Uri"],
+                  case let DynamoDbClientTypes.AttributeValue.s(s3Uri) = s3Uri else {
+                return try Meme(dictionary: meme, url: nil)
+            }
+  
+            let url = try getPreSignedUrl(s3Uri: s3Uri)
+            let sanitizedString = url.absoluteString.replacingOccurrences(of: ":443", with: "")
+            let sanitizedUrl = URL(string: sanitizedString)
+            return try Meme(dictionary: meme, url: sanitizedUrl)
         }
-        
-       let memes = try items.map { meme in
-           try Meme(dictionary: meme)
-        }
-        
-        for var meme in memes {
-            meme.url = try await getPreSignedUrl(s3Uri: meme.s3Uri)
-        }
-        
         return memes
     }
     
-    func getPreSignedUrl(s3Uri: String) async throws -> URL {
-        let config = try S3Client.S3ClientConfiguration(credentialsProvider: credProvider,
-                                                        region: "us-east-1")
+    func approveImage(meme: Meme) async throws -> Bool {
+        let itemKey = ["id" : DynamoDbClientTypes.AttributeValue.s(meme.id)]
+        let updatedValues = ["status": DynamoDbClientTypes.AttributeValueUpdate(action: .put, value: DynamoDbClientTypes.AttributeValue.s("approved"))]
+        let input = UpdateItemInput(attributeUpdates: updatedValues, key: itemKey, tableName: tableName)
+        _ = try await dynamoClient.updateItem(input: input)
+        return true
+    }
+    
+    func denyImage(meme: Meme) async throws -> Bool {
+        let itemKey = ["id" : DynamoDbClientTypes.AttributeValue.s(meme.id)]
+        let updatedValues = ["status": DynamoDbClientTypes.AttributeValueUpdate(action: .put, value: DynamoDbClientTypes.AttributeValue.s("rejected"))]
+        let input = UpdateItemInput(attributeUpdates: updatedValues, key: itemKey, tableName: tableName)
+        _ = try await dynamoClient.updateItem(input: input)
+        return true
+    }
+    
+    func getPreSignedUrl(s3Uri: String) throws -> URL {
+
         let bucketAndKey = s3Uri.substringAfter("s3://")
         let bucket = bucketAndKey.substringBefore("/")
         let key = bucketAndKey.substringAfter("/")
-        let input = GetObjectInput(bucket: bucket, key: key).presign(config: config, expiration: 86400)
-        print(input?.endpoint.url!)
-        return (input?.endpoint.url)!
+        let input = GetObjectInput(bucket: bucket, key: key)
+        guard let url = input.presignURL(config: self.s3Config, expiration: 10000) else {
+            print("exiting")
+            exit(1)
+        }
+        print(url)
+        return url
     }
- }
+}
+
+enum Configuration {
+    enum Error: Swift.Error {
+        case missingKey, invalidValue
+    }
+
+    static func value(for key: String) throws -> String {
+        guard let value = Bundle.main.object(forInfoDictionaryKey:key) else {
+            throw Error.missingKey
+        }
+
+        return value as! String
+    }
+}

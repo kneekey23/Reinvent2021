@@ -22,7 +22,7 @@ final class ModeratorFeedViewModel: ObservableObject {
     func loadMemesToModerate() async throws {
        let result = try await dynamoService.getImagesToModerate()
         self.memeViewModels = result.map { meme in
-            MemeViewModel(meme: meme)
+            MemeViewModel(meme: meme, service: dynamoService)
         }
     }
     

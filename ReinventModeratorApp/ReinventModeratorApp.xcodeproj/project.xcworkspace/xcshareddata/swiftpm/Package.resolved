@@ -2,7 +2,7 @@
   "object": {
     "pins": [
       {
-        "package": "aws-crt-swift",
+        "package": "AwsCrt",
         "repositoryURL": "https://github.com/awslabs/aws-crt-swift.git",
         "state": {
           "branch": null,
@@ -11,16 +11,16 @@
         }
       },
       {
-        "package": "aws-sdk-swift",
+        "package": "AWSSwiftSDK",
         "repositoryURL": "https://github.com/awslabs/aws-sdk-swift",
         "state": {
           "branch": null,
-          "revision": "04792587401849162e9d79a75077f5dcc0561825",
-          "version": "0.0.15"
+          "revision": "4d4569625a022fd24755024ac535b821c729bc4b",
+          "version": "0.0.16"
         }
       },
       {
-        "package": "smithy-swift",
+        "package": "ClientRuntime",
         "repositoryURL": "https://github.com/awslabs/smithy-swift.git",
         "state": {
           "branch": null,
