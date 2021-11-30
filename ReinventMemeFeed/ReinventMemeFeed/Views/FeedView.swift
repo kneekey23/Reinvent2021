@@ -12,6 +12,9 @@ struct FeedView: View {
     var body: some View {
         NavigationView {
             List {
+                if viewModel.memeViewModels.isEmpty {
+                    Text("No memes received yet.")
+                } else {
                 ForEach(viewModel.memeViewModels, id: \.id) { memeVm in
                     MemeRow(viewModel: memeVm)
                 }
@@ -21,15 +24,19 @@ struct FeedView: View {
                         viewModel.loadMemes()
                     }
                 }
+                }
             }.navigationBarTitleDisplayMode(.inline)
             .toolbar() {
                 ToolbarItem(placement: .principal, content: {
                     Text("Generated Memes").foregroundColor(.black)
                 })
             }
+            
         }.onAppear() {
             viewModel.loadMemes()
             
+        }.refreshable {
+            viewModel.loadMemes()
         }
     }
 }

@@ -8,5 +8,7 @@
 	<string>$(AWS_SECRET_KEY)</string>
 	<key>NSAllowsArbitraryLoadsForMedia</key>
 	<true/>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

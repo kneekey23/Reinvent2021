@@ -18,10 +18,12 @@ struct ModeratorFeedView: View {
             }.navigationBarTitleDisplayMode(.inline)
             .toolbar() {
                 ToolbarItem(placement: .principal, content: {
-                    Text("Generated Memes").foregroundColor(.black)
+                    Text("Generated Memes For Approval").foregroundColor(.black)
                 })
             }
         }.task {
+            try? await viewModel.loadMemesToModerate()
+        }.refreshable {
             try? await viewModel.loadMemesToModerate()
         }
     }

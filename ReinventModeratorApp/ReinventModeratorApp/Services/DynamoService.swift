@@ -54,7 +54,7 @@ final class DynamoService {
     
     func approveImage(meme: Meme) async throws -> Bool {
         let itemKey = ["id" : DynamoDbClientTypes.AttributeValue.s(meme.id)]
-        let updatedValues = ["status": DynamoDbClientTypes.AttributeValueUpdate(action: .put, value: DynamoDbClientTypes.AttributeValue.s("approved"))]
+        let updatedValues = ["status": DynamoDbClientTypes.AttributeValueUpdate(action: .put, value: DynamoDbClientTypes.AttributeValue.s("approved")), "approvalTimestamp": DynamoDbClientTypes.AttributeValueUpdate(action:  .put, value: DynamoDbClientTypes.AttributeValue.s(Date().iso8601FractionalSeconds()))]
         let input = UpdateItemInput(attributeUpdates: updatedValues, key: itemKey, tableName: tableName)
         _ = try await dynamoClient.updateItem(input: input)
         return true

@@ -18,8 +18,8 @@
 		95765860273B226C00393CAE /* MemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576585F273B226C00393CAE /* MemeViewModel.swift */; };
 		95765863273B22B600393CAE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95765862273B22B600393CAE /* Date+Extensions.swift */; };
 		95F32F2A274F34B300E81651 /* ModeratorFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F32F27274F34B300E81651 /* ModeratorFeedView.swift */; };
-		95F32F2B274F34B300E81651 /* Rows in Resources */ = {isa = PBXBuildFile; fileRef = 95F32F28274F34B300E81651 /* Rows */; };
 		95F32F2C274F34B300E81651 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F32F29274F34B300E81651 /* LabelView.swift */; };
+		95F32F2E2756B1D900E81651 /* MemeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F32F2D2756B1D900E81651 /* MemeRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +35,8 @@
 		95F32F24274F1B3700E81651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95F32F25274F2FDC00E81651 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		95F32F27274F34B300E81651 /* ModeratorFeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeratorFeedView.swift; path = ReinventModeratorApp/Views/ModeratorFeedView.swift; sourceTree = SOURCE_ROOT; };
-		95F32F28274F34B300E81651 /* Rows */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Rows; path = ReinventModeratorApp/Views/Rows; sourceTree = SOURCE_ROOT; };
 		95F32F29274F34B300E81651 /* LabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabelView.swift; path = ReinventModeratorApp/Views/LabelView.swift; sourceTree = SOURCE_ROOT; };
+		95F32F2D2756B1D900E81651 /* MemeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 		95765853273B19F300393CAE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				95F32F28274F34B300E81651 /* Rows */,
+				95F32F2F2756B1EA00E81651 /* Rows */,
 				95F32F29274F34B300E81651 /* LabelView.swift */,
 				95F32F27274F34B300E81651 /* ModeratorFeedView.swift */,
 			);
@@ -143,6 +143,14 @@
 				95765862273B22B600393CAE /* Date+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95F32F2F2756B1EA00E81651 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				95F32F2D2756B1D900E81651 /* MemeRow.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +220,6 @@
 			files = (
 				9576584A273B191200393CAE /* Preview Assets.xcassets in Resources */,
 				95765847273B191200393CAE /* Assets.xcassets in Resources */,
-				95F32F2B274F34B300E81651 /* Rows in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +232,7 @@
 			files = (
 				95765858273B1CD900393CAE /* ModeratorFeedViewModel.swift in Sources */,
 				95765843273B191100393CAE /* ReinventModeratorAppApp.swift in Sources */,
+				95F32F2E2756B1D900E81651 /* MemeRow.swift in Sources */,
 				95765863273B22B600393CAE /* Date+Extensions.swift in Sources */,
 				95F32F2A274F34B300E81651 /* ModeratorFeedView.swift in Sources */,
 				95F32F2C274F34B300E81651 /* LabelView.swift in Sources */,
@@ -289,7 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -345,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -363,7 +371,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReinventModeratorApp/Preview Content\"";
-				DEVELOPMENT_TEAM = W3DRXD72QU;
+				DEVELOPMENT_TEAM = F7677W8937;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReinventModeratorApp/Info.plist;
@@ -372,13 +380,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aws.ReinventModeratorApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aws.reinvent.ReinventModeratorApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -394,7 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ReinventModeratorApp/Preview Content\"";
-				DEVELOPMENT_TEAM = W3DRXD72QU;
+				DEVELOPMENT_TEAM = F7677W8937;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReinventModeratorApp/Info.plist;
@@ -403,13 +411,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aws.ReinventModeratorApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aws.reinvent.ReinventModeratorApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

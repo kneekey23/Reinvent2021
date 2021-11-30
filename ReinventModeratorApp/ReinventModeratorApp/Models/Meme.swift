@@ -45,23 +45,29 @@ struct Meme: Codable {
     
     public init(dictionary: [String: DynamoDbClientTypes.AttributeValue], url: URL?) throws {
         guard let id = dictionary[DynamoDBField.id],
-            let status = dictionary[DynamoDBField.status],
-            let approvalTimestamp = dictionary[DynamoDBField.approvalTimestamp],
-            let s3Uri = dictionary[DynamoDBField.s3Uri],
-            let submitTimestamp = dictionary[DynamoDBField.submitTimestamp] else {
-                throw APIError.decodingError
-        }
+              let status = dictionary[DynamoDBField.status],
+              let s3Uri = dictionary[DynamoDBField.s3Uri],
+              let submitTimestamp = dictionary[DynamoDBField.submitTimestamp] else {
+                  throw APIError.decodingError
+              }
         
         guard case let DynamoDbClientTypes.AttributeValue.s(id) = id,
               case let DynamoDbClientTypes.AttributeValue.s(status) = status,
-              case let DynamoDbClientTypes.AttributeValue.s(approvalTimestamp) = approvalTimestamp,
               case let DynamoDbClientTypes.AttributeValue.s(s3Uri) = s3Uri,
               case let DynamoDbClientTypes.AttributeValue.s(submitTimestamp) = submitTimestamp, let submitTimestamp = DateFormatter.iso8601DateFormatterWithFractionalSeconds.date(from: submitTimestamp) else {
                   throw APIError.decodingError
               }
         self.id = id
         self.status = MemeStatus(rawValue: status) ?? .unapproved
-        self.approvalTimestamp = DateFormatter.iso8601DateFormatterWithFractionalSeconds.date(from: approvalTimestamp)
+        if let approvalTimestampString = dictionary[DynamoDBField.approvalTimestamp] {
+            if case let DynamoDbClientTypes.AttributeValue.s(approvalTimestampString) = approvalTimestampString {
+                self.approvalTimestamp = DateFormatter.iso8601DateFormatterWithFractionalSeconds.date(from: approvalTimestampString)
+            } else {
+                self.approvalTimestamp = nil
+            }
+        } else {
+            self.approvalTimestamp = nil
+        }
         self.s3Uri = s3Uri
         self.submitTimestamp = submitTimestamp
         self.url = url

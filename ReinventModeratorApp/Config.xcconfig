@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  ReinventModeratorApp
+//
+//  Created by Stone, Nicki on 11/24/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+AWS_ACCESS_KEY=AKIA3XEC53A2LM6SWXOV
+AWS_SECRET_KEY=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

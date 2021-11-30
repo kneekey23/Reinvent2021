@@ -30,9 +30,9 @@ final class FeedViewModel: ObservableObject {
             }
         } receiveValue: { memeResponse in
             
-            for meme in memeResponse.memes {
-                self.memeViewModels.append(MemeViewModel(meme: meme))
-            }
+            self.memeViewModels = memeResponse.memes.map({ meme in
+                MemeViewModel(meme: meme)
+            })
             self.hasMoreMemes = memeResponse.continueFrom != nil
             self.continueFrom = memeResponse.continueFrom
         }
