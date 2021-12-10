@@ -1,14 +1,19 @@
 package aws.sdk.kotlin.example.reinvent_2021.webserv
 
-import io.ktor.application.*
-import io.ktor.features.*
-import io.ktor.http.*
-import io.ktor.request.*
-import io.ktor.response.*
-import io.ktor.routing.*
-import io.ktor.serialization.*
-import io.ktor.server.engine.*
-import io.ktor.server.netty.*
+import io.ktor.application.call
+import io.ktor.application.install
+import io.ktor.features.ContentNegotiation
+import io.ktor.features.StatusPages
+import io.ktor.http.HttpStatusCode
+import io.ktor.request.receive
+import io.ktor.response.respond
+import io.ktor.response.respondText
+import io.ktor.routing.get
+import io.ktor.routing.post
+import io.ktor.routing.routing
+import io.ktor.serialization.json
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
 import kotlinx.serialization.json.Json
 
 private const val PORT = 5000
@@ -17,9 +22,11 @@ class WebService(memes: MemesService) {
     init {
         embeddedServer(Netty, PORT) {
             install(ContentNegotiation) {
-                json(Json {
-                    prettyPrint = true
-                })
+                json(
+                    Json {
+                        prettyPrint = true
+                    }
+                )
             }
 
             install(StatusPages) {
@@ -31,11 +38,13 @@ class WebService(memes: MemesService) {
 
             routing {
                 get("/") {
-                    call.respondText { """
-                    {
-                        "message": "Service is running."
+                    call.respondText {
+                        """
+                            {
+                                "message": "Service is running."
+                            }
+                        """.trimIndent()
                     }
-                """.trimIndent() }
                 }
 
                 get("/memes/list") {

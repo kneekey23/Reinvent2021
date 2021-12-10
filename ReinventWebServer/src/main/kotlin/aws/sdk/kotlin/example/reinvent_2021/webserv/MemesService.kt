@@ -10,6 +10,7 @@ import java.time.ZoneOffset
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
+private const val MAX_RESULTS_PER_PAGE = 25
 private const val MEMES_TABLE = "memes"
 private const val PRESIGN_TTL_SECONDS = 86400L // 1 day
 private const val QUERY_INDEX = "status-approvalTimestamp-index"
@@ -35,7 +36,7 @@ class MemesService(private val ddb: DynamoDbClient, private val ids: IdGenerator
                 ":statusVal" to AttributeValue.S("approved"),
                 ":approvalTsVal" to AttributeValue.S(continueFrom ?: nowTs()),
             )
-            limit = 25
+            limit = MAX_RESULTS_PER_PAGE
         }
         val memes = results.items!!.map { rowToMeme(it) }
 

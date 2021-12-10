@@ -5,6 +5,7 @@ plugins {
     kotlin("plugin.serialization") version "1.5.31"
     application
     id("com.github.johnrengelman.shadow") version "7.1.0"
+    id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
 }
 
 group = "aws.sdk.kotlin.example.reinvent_2021.webserv"
@@ -20,8 +21,8 @@ dependencies {
     implementation(kotlin("stdlib"))
 
     // AWS SDK
-    implementation("aws.sdk.kotlin:dynamodb:0.9.0-presignurl")
-    implementation("aws.sdk.kotlin:s3:0.9.0-presignurl")
+    implementation("aws.sdk.kotlin:dynamodb:0.9.4-beta")
+    implementation("aws.sdk.kotlin:s3:0.9.4-beta")
 
     // Ktor web server
     implementation("io.ktor:ktor-server-core:1.6.4")
